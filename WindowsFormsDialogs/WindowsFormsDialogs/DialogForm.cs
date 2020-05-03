@@ -62,7 +62,7 @@ namespace WindowsFormsDialogs
                 if ((myStream = saveFileDialog1.OpenFile()) != null)
                 {
                     var content = "This is a content to be written!";
-                    myStream.Write(Encoding.ASCII.GetBytes(content),0,content.Length);
+                    myStream.Write(Encoding.ASCII.GetBytes(content), 0, content.Length);
                     // Code to write the stream goes here.
                     myStream.Close();
                 }
@@ -136,10 +136,42 @@ namespace WindowsFormsDialogs
                 textBox1.ForeColor = colorDialog.Color;
         }
 
+        private void btnCustomDialog_Click(object sender, EventArgs e)
+        { 
+            var dlg = new CustomDialog();
+            var result = dlg.ShowDialog();
+
+            this.labelMessage.Text = result.ToString();
+
+        }
+
+        private void textBox1_Validating(object sender, CancelEventArgs e)
+        {
+            string errorMsg;
+            if (!ValidEmailAddress(textBox1.Text, out errorMsg))
+            {
+                // Cancel the event and select the text to be corrected by the user.
+                e.Cancel = true;
+                textBox1.Select(0, textBox1.Text.Length);
+                // Set the ErrorProvider error with the text to display.                 
+                this.errorProvider1.SetError(textBox1, errorMsg);
+            }
+
+        }
+
+
+
+
+        private void textBox1_Validated(object sender, EventArgs e)
+        {
+            // If all conditions have been met, clear the ErrorProvider of errors.
+            errorProvider1.SetError(textBox1, "");
+        }
+
         private void btnFolderBrowserDialog_Click(object sender, EventArgs e)
         {
-            this.openFileDialog = new  OpenFileDialog();
-            this.folderBrowserDialog1 = new  FolderBrowserDialog();
+            this.openFileDialog = new OpenFileDialog();
+            this.folderBrowserDialog1 = new FolderBrowserDialog();
 
 
             // If a file is not opened, then set the initial directory to the
@@ -180,5 +212,32 @@ namespace WindowsFormsDialogs
                 return;
             }
         }
+
+
+        public bool ValidEmailAddress(string emailAddress, out string errorMessage)
+        {
+            // Confirm that the email address string is not empty.
+            if (emailAddress.Length == 0)
+            {
+                errorMessage = "email address is required.";
+                return false;
+            }
+
+            // Confirm that there is an "@" and a "." in the email address, and in the correct order.
+            if (emailAddress.IndexOf("@") > -1)
+            {
+                if (emailAddress.IndexOf(".", emailAddress.IndexOf("@")) > emailAddress.IndexOf("@"))
+                {
+                    errorMessage = "";
+                    return true;
+                }
+            }
+
+            errorMessage = "email address must be valid email address format.\n" +
+               "For example 'someone@example.com' ";
+            return false;
+        }
+
+
     }
 }

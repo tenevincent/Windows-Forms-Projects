@@ -1,9 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.1022
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsDialogs", "WindowsFormsDialogs\WindowsFormsDialogs.csproj", "{E8810318-E883-47EF-B74C-8B956D4058D8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WindowsFormsEvents", "..\WindowsFormsApp1\WindowsFormsApp1\WindowsFormsEvents.csproj", "{CA4E423C-A600-4A28-832C-539D77C42BEE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonControls", "CommonControls\CommonControls.csproj", "{034F21D3-7FBE-4F08-BE5F-DFAFD3D798F4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Udemy.FormsWorking.WithControls", "Udemy.FormsWorking.WithControls\Udemy.FormsWorking.WithControls.csproj", "{8F9F8FFC-7CAB-4845-B29B-5A7553DE0612}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContainerControls", "ContainerControls\ContainerControls.csproj", "{52F1D1B1-140D-4F9B-8A22-18622258AE98}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,22 @@ Global
 		{E8810318-E883-47EF-B74C-8B956D4058D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8810318-E883-47EF-B74C-8B956D4058D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8810318-E883-47EF-B74C-8B956D4058D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA4E423C-A600-4A28-832C-539D77C42BEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA4E423C-A600-4A28-832C-539D77C42BEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA4E423C-A600-4A28-832C-539D77C42BEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA4E423C-A600-4A28-832C-539D77C42BEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{034F21D3-7FBE-4F08-BE5F-DFAFD3D798F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{034F21D3-7FBE-4F08-BE5F-DFAFD3D798F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{034F21D3-7FBE-4F08-BE5F-DFAFD3D798F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{034F21D3-7FBE-4F08-BE5F-DFAFD3D798F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F9F8FFC-7CAB-4845-B29B-5A7553DE0612}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F9F8FFC-7CAB-4845-B29B-5A7553DE0612}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F9F8FFC-7CAB-4845-B29B-5A7553DE0612}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F9F8FFC-7CAB-4845-B29B-5A7553DE0612}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52F1D1B1-140D-4F9B-8A22-18622258AE98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52F1D1B1-140D-4F9B-8A22-18622258AE98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52F1D1B1-140D-4F9B-8A22-18622258AE98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52F1D1B1-140D-4F9B-8A22-18622258AE98}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

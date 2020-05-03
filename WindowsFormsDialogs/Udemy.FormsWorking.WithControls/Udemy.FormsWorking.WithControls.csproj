@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFrameworks>net472;netcoreapp3.1</TargetFrameworks>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\copy-32.png" />
+    <None Remove="Resources\delete-32.png" />
+    <None Remove="Resources\edit-3-32.png" />
+    <None Remove="Resources\john.png" />
+    <None Remove="Resources\mary.png" />
+    <None Remove="Resources\sam.jpg" />
+    <None Remove="Resources\sara.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\copy-32.png" />
+    <Resource Include="Resources\delete-32.png" />
+    <Resource Include="Resources\edit-3-32.png" />
+    <Resource Include="Resources\john.png" />
+    <Resource Include="Resources\mary.png" />
+    <Resource Include="Resources\sam.jpg" />
+    <Resource Include="Resources\sara.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
