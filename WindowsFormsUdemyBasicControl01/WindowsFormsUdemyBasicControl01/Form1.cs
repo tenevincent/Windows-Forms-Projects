@@ -45,5 +45,28 @@ namespace WindowsFormsUdemyBasicControl01
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+           
+            if (null != dateTimePicker1?.Value)
+            {
+                this.labelStatusBar.Text = dateTimePicker1.Value.ToString();
+
+            }
+             
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            if (null != dateTimePicker1?.Value)
+              this.labelStatusBar.Text = dateTimePicker1.Value.ToString();
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.labelStatusBar.Text = this.dateTimePicker2.Value.ToString();
+        }
     }
 }
