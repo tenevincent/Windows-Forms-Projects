@@ -80,8 +80,8 @@
             // 
             // labelKeyDown
             // 
-            this.labelKeyDown.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.labelKeyDown.Location = new System.Drawing.Point(29, 125);
+            this.labelKeyDown.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelKeyDown.Location = new System.Drawing.Point(28, 128);
             this.labelKeyDown.Name = "labelKeyDown";
             this.labelKeyDown.Size = new System.Drawing.Size(101, 20);
             this.labelKeyDown.TabIndex = 7;
@@ -89,8 +89,8 @@
             // 
             // textBoxDown
             // 
-            this.textBoxDown.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textBoxDown.Location = new System.Drawing.Point(159, 125);
+            this.textBoxDown.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxDown.Location = new System.Drawing.Point(158, 128);
             this.textBoxDown.Name = "textBoxDown";
             this.textBoxDown.Size = new System.Drawing.Size(302, 20);
             this.textBoxDown.TabIndex = 6;
@@ -108,7 +108,7 @@
             this.Controls.Add(this.labelEmail);
             this.Controls.Add(this.textBoxEmail);
             this.Name = "EmailValidationTextBoxView";
-            this.Size = new System.Drawing.Size(520, 223);
+            this.Size = new System.Drawing.Size(519, 228);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EmailValidationTextBoxView_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
