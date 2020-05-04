@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnOpenDialog = new System.Windows.Forms.Button();
             this.labelMessage = new System.Windows.Forms.Label();
             this.btnSaveFileDialog = new System.Windows.Forms.Button();
@@ -38,7 +39,11 @@
             this.btnColorDialog = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnCustomDialog = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnOpenDialog
@@ -56,7 +61,7 @@
             this.labelMessage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelMessage.AutoSize = true;
-            this.labelMessage.Location = new System.Drawing.Point(21, 418);
+            this.labelMessage.Location = new System.Drawing.Point(21, 690);
             this.labelMessage.Name = "labelMessage";
             this.labelMessage.Size = new System.Drawing.Size(35, 13);
             this.labelMessage.TabIndex = 1;
@@ -86,7 +91,7 @@
             // 
             this.btnFolderBrowserDialog.Location = new System.Drawing.Point(24, 223);
             this.btnFolderBrowserDialog.Name = "btnFolderBrowserDialog";
-            this.btnFolderBrowserDialog.Size = new System.Drawing.Size(196, 38);
+            this.btnFolderBrowserDialog.Size = new System.Drawing.Size(102, 38);
             this.btnFolderBrowserDialog.TabIndex = 4;
             this.btnFolderBrowserDialog.Text = "Folder Browser Dialog";
             this.btnFolderBrowserDialog.UseVisualStyleBackColor = true;
@@ -97,9 +102,9 @@
             this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox1.Location = new System.Drawing.Point(430, 84);
+            this.richTextBox1.Location = new System.Drawing.Point(225, 103);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(357, 166);
+            this.richTextBox1.Size = new System.Drawing.Size(937, 181);
             this.richTextBox1.TabIndex = 5;
             this.richTextBox1.Text = "";
             // 
@@ -107,7 +112,7 @@
             // 
             this.btnPrintDialog.Location = new System.Drawing.Point(24, 285);
             this.btnPrintDialog.Name = "btnPrintDialog";
-            this.btnPrintDialog.Size = new System.Drawing.Size(196, 36);
+            this.btnPrintDialog.Size = new System.Drawing.Size(102, 36);
             this.btnPrintDialog.TabIndex = 6;
             this.btnPrintDialog.Text = "Print Dialog";
             this.btnPrintDialog.UseVisualStyleBackColor = true;
@@ -125,10 +130,12 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(430, 45);
+            this.textBox1.Location = new System.Drawing.Point(225, 66);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(358, 20);
+            this.textBox1.Size = new System.Drawing.Size(937, 20);
             this.textBox1.TabIndex = 8;
+            this.textBox1.Validating += new System.ComponentModel.CancelEventHandler(this.textBox1_Validating);
+            this.textBox1.Validated += new System.EventHandler(this.textBox1_Validated);
             // 
             // pictureBox1
             // 
@@ -136,17 +143,42 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::WindowsFormsDialogs.Properties.Resources.Dialog_Pro_Exception;
-            this.pictureBox1.Location = new System.Drawing.Point(237, 256);
+            this.pictureBox1.Location = new System.Drawing.Point(225, 313);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(551, 182);
+            this.pictureBox1.Size = new System.Drawing.Size(937, 387);
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
+            // 
+            // btnCustomDialog
+            // 
+            this.btnCustomDialog.Location = new System.Drawing.Point(24, 358);
+            this.btnCustomDialog.Name = "btnCustomDialog";
+            this.btnCustomDialog.Size = new System.Drawing.Size(102, 36);
+            this.btnCustomDialog.TabIndex = 10;
+            this.btnCustomDialog.Text = "CustomDialog";
+            this.btnCustomDialog.UseVisualStyleBackColor = true;
+            this.btnCustomDialog.Click += new System.EventHandler(this.btnCustomDialog_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(225, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(937, 23);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Enter a valid Email (Email validation)";
             // 
             // DialogForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1362, 722);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnCustomDialog);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnColorDialog);
@@ -160,6 +192,7 @@
             this.Name = "DialogForm";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,6 +210,9 @@
         private System.Windows.Forms.Button btnColorDialog;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnCustomDialog;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label label1;
     }
 }
 
