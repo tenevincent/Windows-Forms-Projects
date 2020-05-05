@@ -68,5 +68,20 @@ namespace WindowsFormsUdemyBasicControl01
         {
             this.labelStatusBar.Text = this.dateTimePicker2.Value.ToString();
         }
+
+        private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
+        {
+            this.labelStatusBar.Text = this.dateTimePicker2.Value.ToString();
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            this.labelStatusBar.Text = this.dateTimePicker2.Value.ToString();
+        }
+
+        private void maskedTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            this.labelStatusBar.Text = this.maskedTextBox1.Text.ToString();
+        }
     }
 }

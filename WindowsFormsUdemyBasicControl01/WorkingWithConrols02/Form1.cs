@@ -36,6 +36,30 @@ namespace WorkingWithConrols02
                 this.comboBox1.Items.Add(new Student() { Id = 1, Name = "vincent 05", FirstName = "Tene 05" });
                 this.comboBox1.Items.Add(new Student() { Id = 1, Name = "vincent 05", FirstName = "Tene 05" });
 
+
+                this.listBox1.Items.Clear();
+                this.listBox1.DisplayMember = nameof(Student.CompleteName);
+
+                this.listBox1.Items.Add(new Student() { Id = 1, Name = "vincent 01", FirstName = "Tene 01" });
+                this.listBox1.Items.Add(new Student() { Id = 1, Name = "vincent 02", FirstName = "Tene 02" });
+                this.listBox1.Items.Add(new Student() { Id = 1, Name = "vincent 03", FirstName = "Tene 03" });
+                this.listBox1.Items.Add(new Student() { Id = 1, Name = "vincent 04", FirstName = "Tene 04" });
+                this.listBox1.Items.Add(new Student() { Id = 1, Name = "vincent 05", FirstName = "Tene 05" });
+                this.listBox1.Items.Add(new Student() { Id = 1, Name = "vincent 05", FirstName = "Tene 05" });
+
+
+
+                this.checkedListBox1.Items.Clear();
+                this.checkedListBox1.DisplayMember = nameof(Student.CompleteName);
+
+                this.checkedListBox1.Items.Add(new Student() { Id = 1, Name = "vincent 01", FirstName = "Tene 01" });
+                this.checkedListBox1.Items.Add(new Student() { Id = 1, Name = "vincent 02", FirstName = "Tene 02" });
+                this.checkedListBox1.Items.Add(new Student() { Id = 1, Name = "vincent 03", FirstName = "Tene 03" });
+                this.checkedListBox1.Items.Add(new Student() { Id = 1, Name = "vincent 04", FirstName = "Tene 04" });
+                this.checkedListBox1.Items.Add(new Student() { Id = 1, Name = "vincent 05", FirstName = "Tene 05" });
+                this.checkedListBox1.Items.Add(new Student() { Id = 1, Name = "vincent 05", FirstName = "Tene 05" });
+
+
             };
         }
 
@@ -83,6 +107,36 @@ namespace WorkingWithConrols02
                                this.comboBox3.SelectedItem + "\n";
             
             MessageBox.Show(selectedItem);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.labelStatusBar.Text = this.listBox1.SelectedItems.Count.ToString();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.labelStatusBar.Text = checkedListBox1.CheckedItems.Count.ToString();
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            this.labelStatusBar.Text = this.numericUpDown1.Value.ToString();
+        }
+
+        private async void btnProgressBar_Click(object sender, EventArgs e)
+        {
+         
+            for (int ii = 0; ii < 100; ii++)
+            {
+                this.progressBar1.Value = ii;
+               await Task.Delay(500);
+            }
         }
     }
 }
