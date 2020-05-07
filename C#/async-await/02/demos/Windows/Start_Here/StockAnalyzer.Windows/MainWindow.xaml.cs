@@ -18,8 +18,42 @@ namespace StockAnalyzer.Windows
             InitializeComponent();
         }
 
-        private void Search_Click(object sender, RoutedEventArgs e)
+        public class StockData
         {
+
+            public List<StockPrice> A { get; set; }
+        }
+
+        private async void Search_Click(object sender, RoutedEventArgs e)
+        {
+            //#region Before loading stock data
+            //var watch = new Stopwatch();
+            //watch.Start();
+            //StockProgress.Visibility = Visibility.Visible;
+            //StockProgress.IsIndeterminate = true;
+            //#endregion
+
+            Stocks.ItemsSource = new List<StockPrice>();
+
+            try
+            {
+               await  this.GetStocksAsync();
+            }
+            catch (Exception ex)
+            {
+                Notes.Text += ex.Message;
+                StocksStatus.Text += ex.Message;
+            }
+
+
+ 
+        }
+
+
+        public async Task GetStocksAsync()
+        {
+
+
             #region Before loading stock data
             var watch = new Stopwatch();
             watch.Start();
@@ -27,18 +61,46 @@ namespace StockAnalyzer.Windows
             StockProgress.IsIndeterminate = true;
             #endregion
 
-            var client = new WebClient();
 
-            var content = client.DownloadString($"http://localhost:61363/api/stocks/{Ticker.Text}");
 
-            var data = JsonConvert.DeserializeObject<IEnumerable<StockPrice>>(content);
+            using (var client = new HttpClient())
+            {
+                var response = await client.GetAsync($"http://localhost:61363/api/stocks/{Ticker.Text}"); ;
+                if (string.IsNullOrEmpty(Ticker.Text))
+                    response = await client.GetAsync($"http://localhost:61363/api/stocks");
 
-            Stocks.ItemsSource = data;
 
-            #region After stock data is loaded
-            StocksStatus.Text = $"Loaded stocks for {Ticker.Text} in {watch.ElapsedMilliseconds}ms";
-            StockProgress.Visibility = Visibility.Hidden;
+                //try
+                //{ 
+                    response.EnsureSuccessStatusCode();
+                    var resultContent = await response.Content.ReadAsStringAsync();
+
+                    if (string.IsNullOrEmpty(Ticker.Text))
+                    {
+                        var data = JsonConvert.DeserializeObject<StockData>(resultContent);
+                        Stocks.ItemsSource = data.A;
+                    }
+                    else
+                    {
+                        var data = JsonConvert.DeserializeObject<IEnumerable<StockPrice>>(resultContent);
+                        Stocks.ItemsSource = data;
+                    }
+
+                    #region After stock data is loaded
+                    StocksStatus.Text = $"Loaded stocks for {Ticker.Text} in {watch.ElapsedMilliseconds}ms";
+                    StockProgress.Visibility = Visibility.Hidden;
+                //}
+                //catch (Exception ex)
+                //{
+                //    Notes.Text = ex.Message;
+                //    StocksStatus.Text = ex.Message;
+                //}
+
+   
+            }
+
             #endregion
+
         }
 
         private void Hyperlink_OnRequestNavigate(object sender, RequestNavigateEventArgs e)

@@ -13,6 +13,16 @@ namespace StockAnalyzer.Web.Controllers
 {
     public class StocksController : ApiController
     {
+        [Route("api/stocks")]
+        public async Task<IHttpActionResult> GetAll()
+        {
+            var store = new DataStore(HostingEnvironment.MapPath("~/bin"));
+            var data = await store.LoadStocks();            
+            return Json(data);
+        }
+
+
+
         [Route("api/stocks/{ticker}")] 
         public async Task<IHttpActionResult> Get(string ticker)
         {
