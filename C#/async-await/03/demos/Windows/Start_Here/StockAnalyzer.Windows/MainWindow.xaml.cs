@@ -26,7 +26,7 @@ namespace StockAnalyzer.Windows
 
         CancellationTokenSource cancellationTokenSource = null;
 
-        private void Search_Click(object sender, RoutedEventArgs e)
+        private async void Search_Click(object sender, RoutedEventArgs e)
         {
             #region Before loading stock data
             var watch = new Stopwatch();
@@ -37,6 +37,77 @@ namespace StockAnalyzer.Windows
             Search.Content = "Cancel";
             #endregion
 
+            var loadLinesTasks = Task<List<string>>.Run(() =>
+            {
+                var lines = File.ReadAllLines(@"StockPrices_Small.csv").ToList();
+                return lines;
+            });
+
+            var processStocksTask = loadLinesTasks.ContinueWith( t =>
+            {
+                var lines = t.Result;
+
+                var data = new List<StockPrice>();
+
+                foreach (var line in lines.Skip(1))
+                {
+                    var segments = line.Split(',');
+                    for (var i = 0; i < segments.Length; i++)
+                    {
+
+                        segments[i] = segments[i].Trim('\'', '"');
+                        Task.Delay(200);
+                    }
+
+                   
+
+                    var price = new StockPrice
+                    {
+                        Ticker = segments[0],
+                        TradeDate = DateTime.ParseExact(segments[1], "M/d/yyyy h:mm:ss tt", CultureInfo.InvariantCulture),
+                        Volume = Convert.ToInt32(segments[6], CultureInfo.InvariantCulture),
+                        Change = Convert.ToDecimal(segments[7], CultureInfo.InvariantCulture),
+                        ChangePercent = Convert.ToDecimal(segments[8], CultureInfo.InvariantCulture),
+                    }; 
+                    data.Add(price);
+                }
+
+                Dispatcher.Invoke(() =>
+                {
+                    Stocks.ItemsSource = data.Where(price => price.Ticker == Ticker.Text);
+                }); 
+            });
+
+            processStocksTask.ContinueWith(process =>
+            { 
+                Dispatcher.Invoke(() =>
+                {
+                    #region After stock data is loaded
+                    StocksStatus.Text = $"Loaded stocks for {Ticker.Text} in {watch.ElapsedMilliseconds}ms, loaded {loadLinesTasks.Result.Count} rows";
+                    StockProgress.Visibility = Visibility.Hidden;
+                    Search.Content = "Search";
+                        #endregion
+                    });
+            });
+
+
+            //  OnExecuteLongRunningTask();
+
+
+
+
+
+            #region After stock data is loaded
+            StocksStatus.Text = $"Loaded stocks for {Ticker.Text} in {watch.ElapsedMilliseconds}ms";
+            StockProgress.Visibility = Visibility.Hidden;
+            Search.Content = "Search";
+            #endregion
+
+            cancellationTokenSource = null;
+        }
+
+        private void OnExecuteLongRunningTask()
+        {
             var lines = File.ReadAllLines(@"StockPrices_Small.csv");
 
             var data = new List<StockPrice>();
@@ -57,15 +128,17 @@ namespace StockAnalyzer.Windows
                 data.Add(price);
             }
 
-            Stocks.ItemsSource = data.Where(price => price.Ticker == Ticker.Text);
+            Dispatcher.Invoke(() =>
+            {
+                if(!string.IsNullOrEmpty(Ticker.Text))
+                    Stocks.ItemsSource = data.Where(price => price.Ticker == Ticker.Text);
+                else
+                {
+                    Stocks.ItemsSource = data;
+                }
+            });
 
-            #region After stock data is loaded
-            StocksStatus.Text = $"Loaded stocks for {Ticker.Text} in {watch.ElapsedMilliseconds}ms";
-            StockProgress.Visibility = Visibility.Hidden;
-            Search.Content = "Search";
-            #endregion
-
-            cancellationTokenSource = null;
+            
         }
 
         private Task<List<string>> SearchForStocks(CancellationToken cancellationToken)
