@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30509.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WindowsFormsIntroduction", "WindowsFormsIntroduction\WindowsFormsIntroduction.csproj", "{8E2E8395-25AD-4FEC-AA85-6BC3A7D2C350}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinformsBestDotNetTrainingFromUdemy", "WinformsBestDotNetTrainingFromUdemy\WinformsBestDotNetTrainingFromUdemy.csproj", "{89B077FC-3561-40CF-A371-3FBF051D3031}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinformsBestDotNetTrainingFromUdemy", "WinformsBestDotNetTrainingFromUdemy\WinformsBestDotNetTrainingFromUdemy.csproj", "{89B077FC-3561-40CF-A371-3FBF051D3031}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
