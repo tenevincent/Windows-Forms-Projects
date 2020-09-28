@@ -1,1 +1,0 @@
-Use store.sql to install the IBuySpy sample database.
