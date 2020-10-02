@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FormsModelViewPresenter", "WinFormsMVP\FormsModelViewPresenter.csproj", "{CAFE7BA2-2CDE-49BA-B329-56223F3A28BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsMVP.Tests", "WinFormsMVP.Tests\WinFormsMVP.Tests.csproj", "{ABB25D19-0502-4EC1-A8CA-91274770D81F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsMVP.Tests", "WinFormsMVP.Tests\WinFormsMVP.Tests.csproj", "{ABB25D19-0502-4EC1-A8CA-91274770D81F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
