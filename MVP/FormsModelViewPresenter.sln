@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FormsModelViewPresenter", "WinFormsMVP\FormsModelViewPresenter.csproj", "{CAFE7BA2-2CDE-49BA-B329-56223F3A28BE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsMVP.Tests", "WinFormsMVP.Tests\WinFormsMVP.Tests.csproj", "{ABB25D19-0502-4EC1-A8CA-91274770D81F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CAFE7BA2-2CDE-49BA-B329-56223F3A28BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAFE7BA2-2CDE-49BA-B329-56223F3A28BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAFE7BA2-2CDE-49BA-B329-56223F3A28BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAFE7BA2-2CDE-49BA-B329-56223F3A28BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABB25D19-0502-4EC1-A8CA-91274770D81F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABB25D19-0502-4EC1-A8CA-91274770D81F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABB25D19-0502-4EC1-A8CA-91274770D81F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABB25D19-0502-4EC1-A8CA-91274770D81F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {34D85534-A69E-4C1D-9EBA-E409BABB9735}
+	EndGlobalSection
+EndGlobal
