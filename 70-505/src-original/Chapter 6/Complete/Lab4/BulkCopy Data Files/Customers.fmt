@@ -1,0 +1,13 @@
+9.0
+11
+1       SQLCHAR       0       10      "\t"     1     CustomerID                   SQL_Latin1_General_CP1_CI_AS
+2       SQLCHAR       0       80      "\t"     2     CompanyName                  SQL_Latin1_General_CP1_CI_AS
+3       SQLCHAR       0       60      "\t"     3     ContactName                  SQL_Latin1_General_CP1_CI_AS
+4       SQLCHAR       0       60      "\t"     4     ContactTitle                 SQL_Latin1_General_CP1_CI_AS
+5       SQLCHAR       0       120     "\t"     5     Address                      SQL_Latin1_General_CP1_CI_AS
+6       SQLCHAR       0       30      "\t"     6     City                         SQL_Latin1_General_CP1_CI_AS
+7       SQLCHAR       0       30      "\t"     7     Region                       SQL_Latin1_General_CP1_CI_AS
+8       SQLCHAR       0       20      "\t"     8     PostalCode                   SQL_Latin1_General_CP1_CI_AS
+9       SQLCHAR       0       30      "\t"     9     Country                      SQL_Latin1_General_CP1_CI_AS
+10      SQLCHAR       0       48      "\t"     10    Phone                        SQL_Latin1_General_CP1_CI_AS
+11      SQLCHAR       0       48      "\r\n"   11    Fax                          SQL_Latin1_General_CP1_CI_AS
