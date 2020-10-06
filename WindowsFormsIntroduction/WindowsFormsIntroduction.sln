@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WindowsFormsContainerDemoAp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WindowsFormsGraphicsDemoApp", "WindowsFormsGraphicsDemoApp\WindowsFormsGraphicsDemoApp.csproj", "{83AD0A41-F462-4DFE-AA96-3589499CE1DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormsModelViewPresenter", "WindowsFormsModelViewPresenterDemoApp\FormsModelViewPresenter.csproj", "{2B74AF0A-9F42-42F7-8FB8-486F802DCBFF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FormsModelViewPresenter", "WindowsFormsModelViewPresenterDemoApp\FormsModelViewPresenter.csproj", "{2B74AF0A-9F42-42F7-8FB8-486F802DCBFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Menus_Tools_And_Status_ToolStrip", "Menus_Tools_And_Status_ToolStrip\Menus_Tools_And_Status_ToolStrip.csproj", "{1A957CE0-898E-424E-841D-2E6F9672CA5A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{2B74AF0A-9F42-42F7-8FB8-486F802DCBFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B74AF0A-9F42-42F7-8FB8-486F802DCBFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B74AF0A-9F42-42F7-8FB8-486F802DCBFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A957CE0-898E-424E-841D-2E6F9672CA5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A957CE0-898E-424E-841D-2E6F9672CA5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A957CE0-898E-424E-841D-2E6F9672CA5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A957CE0-898E-424E-841D-2E6F9672CA5A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
