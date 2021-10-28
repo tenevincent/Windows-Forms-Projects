@@ -1,0 +1,6 @@
+
+1)
+Ninject with Winforms
+
+2)
+Clean Architecture with Winforms

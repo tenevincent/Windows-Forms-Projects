@@ -1,3 +1,5 @@
+using Ninject;
+using Northwind.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +19,18 @@ namespace Northwind.UI
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+     
+
+            IocContainer.Instance.LoadModule(new ApplicationModule());
+         
+
+            IocContainer.Instance.Kernel.Load(new ApplicationModule2());
+
+
+            Application.Run(IocContainer.Instance.Resolve<MainForm>());
+
+
+
         }
     }
 }
