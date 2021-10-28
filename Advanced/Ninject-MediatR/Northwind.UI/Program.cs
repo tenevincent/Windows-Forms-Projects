@@ -1,9 +1,11 @@
+using MediatR;
+using MediatR.Pipeline;
 using Ninject;
-using Northwind.Core;
+using Ninject.Planning.Bindings.Resolvers;
+using Northwind.Root;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using MediatR.Pipeline;
+
 using System.Windows.Forms;
 
 namespace Northwind.UI
@@ -19,13 +21,12 @@ namespace Northwind.UI
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-     
 
+
+            IocContainer.Instance.InitMediatR();
             IocContainer.Instance.LoadModule(new ApplicationModule());
-         
-
-            IocContainer.Instance.Kernel.Load(new ApplicationModule2());
-
+        
+            IocContainer.Instance. Kernel.Load(new ApplicationModule2());         
 
             Application.Run(IocContainer.Instance.Resolve<MainForm>());
 
