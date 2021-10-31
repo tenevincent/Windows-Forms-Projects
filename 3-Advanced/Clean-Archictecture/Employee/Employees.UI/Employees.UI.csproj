@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj" />
+    <ProjectReference Include="..\Employees.Adapters.Out\Employees.Adapters.Out.csproj" />
+    <ProjectReference Include="..\Employees.Application.Services\Employees.App.Services.csproj" />
+    <ProjectReference Include="..\Employees.Domain\Employees.Domain.csproj" />
+    <ProjectReference Include="..\Employees.Ports.In\Employees.Ports.In.csproj" />
+    <ProjectReference Include="..\Employees.Ports.Out\Employees.Ports.Out.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+    <Folder Include="Views\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="MediatR.Ninject" Version="3.2.0" />
+    <PackageReference Include="ninject.extensions.conventions" Version="3.3.0" />
+  </ItemGroup>
+
+</Project>
