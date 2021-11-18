@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnExecute = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnStatusMessage = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -48,16 +51,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBoxValidation = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnExecute
             // 
             this.btnExecute.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExecute.Location = new System.Drawing.Point(804, 372);
+            this.btnExecute.Location = new System.Drawing.Point(418, 331);
             this.btnExecute.Name = "btnExecute";
             this.btnExecute.Size = new System.Drawing.Size(155, 35);
             this.btnExecute.TabIndex = 0;
@@ -97,6 +104,10 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label8);
+            this.tabPage1.Controls.Add(this.textBoxValidation);
+            this.tabPage1.Controls.Add(this.label7);
+            this.tabPage1.Controls.Add(this.textBox7);
             this.tabPage1.Controls.Add(this.textBox6);
             this.tabPage1.Controls.Add(this.textBox5);
             this.tabPage1.Controls.Add(this.pictureBox1);
@@ -116,8 +127,28 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(965, 413);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "Common Controls";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(18, 241);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(94, 15);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "Text boxes Event";
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(136, 233);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(286, 23);
+            this.textBox7.TabIndex = 24;
+            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+            this.textBox7.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox7_KeyDown);
+            this.textBox7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox7_KeyPress);
+            this.textBox7.Validating += new System.ComponentModel.CancelEventHandler(this.textBox7_Validating);
             // 
             // textBox6
             // 
@@ -171,8 +202,14 @@
             // 
             // textBox4
             // 
+            this.textBox4.AutoCompleteCustomSource.AddRange(new string[] {
+            "One",
+            "Once",
+            "Two",
+            "Twice",
+            "Three"});
             this.textBox4.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.textBox4.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
+            this.textBox4.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.textBox4.Location = new System.Drawing.Point(87, 165);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(215, 23);
@@ -249,7 +286,7 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(965, 413);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Commaon Controls (2)";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // linkLabel1
@@ -263,6 +300,27 @@
             this.linkLabel1.Text = "linkLabel1";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(18, 294);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(103, 15);
+            this.label8.TabIndex = 27;
+            this.label8.Text = "Textbox validation";
+            // 
+            // textBoxValidation
+            // 
+            this.textBoxValidation.Location = new System.Drawing.Point(136, 286);
+            this.textBoxValidation.Name = "textBoxValidation";
+            this.textBoxValidation.Size = new System.Drawing.Size(286, 23);
+            this.textBoxValidation.TabIndex = 26;
+            this.textBoxValidation.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxValidation_Validating);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -271,6 +329,7 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.btnStatusMessage);
             this.Controls.Add(this.button1);
+            this.KeyPreview = true;
             this.Name = "MainForm";
             this.Text = "Basic Forms";
             this.Load += new System.EventHandler(this.MainForms_Load);
@@ -280,6 +339,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -306,5 +366,10 @@
         private LinkLabel linkLabel1;
         private TextBox textBox6;
         private TextBox textBox5;
+        private Label label7;
+        private TextBox textBox7;
+        private ErrorProvider errorProvider1;
+        private Label label8;
+        private TextBox textBoxValidation;
     }
 }
