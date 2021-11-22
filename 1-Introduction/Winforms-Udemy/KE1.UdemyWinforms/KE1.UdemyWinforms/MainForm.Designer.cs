@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.btnExecute = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnStatusMessage = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBoxValidation = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -52,54 +52,38 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBoxValidation = new System.Windows.Forms.TextBox();
+            this.menuItemsui1 = new KE1.UdemyWinforms.MenuItemsUI();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.textStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnExecute
             // 
             this.btnExecute.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExecute.Location = new System.Drawing.Point(418, 331);
+            this.btnExecute.Location = new System.Drawing.Point(418, 296);
             this.btnExecute.Name = "btnExecute";
             this.btnExecute.Size = new System.Drawing.Size(155, 35);
             this.btnExecute.TabIndex = 0;
             this.btnExecute.Text = "Execute";
             this.btnExecute.UseVisualStyleBackColor = true;
             // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(973, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // btnStatusMessage
-            // 
-            this.btnStatusMessage.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnStatusMessage.Location = new System.Drawing.Point(0, 464);
-            this.btnStatusMessage.Name = "btnStatusMessage";
-            this.btnStatusMessage.Size = new System.Drawing.Size(973, 23);
-            this.btnStatusMessage.TabIndex = 2;
-            this.btnStatusMessage.Text = "button2";
-            this.btnStatusMessage.UseVisualStyleBackColor = true;
-            // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 23);
+            this.tabControl1.Location = new System.Drawing.Point(0, 58);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(973, 441);
+            this.tabControl1.Size = new System.Drawing.Size(973, 406);
             this.tabControl1.TabIndex = 14;
             // 
             // tabPage1
@@ -125,10 +109,27 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(965, 413);
+            this.tabPage1.Size = new System.Drawing.Size(965, 378);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Common Controls";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(18, 294);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(103, 15);
+            this.label8.TabIndex = 27;
+            this.label8.Text = "Textbox validation";
+            // 
+            // textBoxValidation
+            // 
+            this.textBoxValidation.Location = new System.Drawing.Point(136, 286);
+            this.textBoxValidation.Name = "textBoxValidation";
+            this.textBoxValidation.Size = new System.Drawing.Size(286, 23);
+            this.textBoxValidation.TabIndex = 26;
+            this.textBoxValidation.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxValidation_Validating);
             // 
             // label7
             // 
@@ -284,7 +285,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(965, 413);
+            this.tabPage2.Size = new System.Drawing.Size(965, 378);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Commaon Controls (2)";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -304,31 +305,38 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // label8
+            // menuItemsui1
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(18, 294);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(103, 15);
-            this.label8.TabIndex = 27;
-            this.label8.Text = "Textbox validation";
+            this.menuItemsui1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.menuItemsui1.Location = new System.Drawing.Point(0, 0);
+            this.menuItemsui1.Name = "menuItemsui1";
+            this.menuItemsui1.Size = new System.Drawing.Size(973, 57);
+            this.menuItemsui1.TabIndex = 15;
             // 
-            // textBoxValidation
+            // statusStrip1
             // 
-            this.textBoxValidation.Location = new System.Drawing.Point(136, 286);
-            this.textBoxValidation.Name = "textBoxValidation";
-            this.textBoxValidation.Size = new System.Drawing.Size(286, 23);
-            this.textBoxValidation.TabIndex = 26;
-            this.textBoxValidation.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxValidation_Validating);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.textStatusLabel});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 465);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(973, 22);
+            this.statusStrip1.TabIndex = 16;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // textStatusLabel
+            // 
+            this.textStatusLabel.Name = "textStatusLabel";
+            this.textStatusLabel.Size = new System.Drawing.Size(118, 17);
+            this.textStatusLabel.Text = "toolStripStatusLabel1";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(973, 487);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.menuItemsui1);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.btnStatusMessage);
-            this.Controls.Add(this.button1);
             this.KeyPreview = true;
             this.Name = "MainForm";
             this.Text = "Basic Forms";
@@ -340,15 +348,16 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private Button btnExecute;
-        private Button button1;
-        private Button btnStatusMessage;
         private TabControl tabControl1;
         private TabPage tabPage1;
         private PictureBox pictureBox1;
@@ -371,5 +380,8 @@
         private ErrorProvider errorProvider1;
         private Label label8;
         private TextBox textBoxValidation;
+        private MenuItemsUI menuItemsui1;
+        private StatusStrip statusStrip1;
+        private ToolStripStatusLabel textStatusLabel;
     }
 }

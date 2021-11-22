@@ -42,13 +42,13 @@ namespace KE1.UdemyWinforms
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
             // New text..
-            btnStatusMessage.Text = textBox3.Text;
+            textStatusLabel.Text = textBox3.Text;
         }
 
         private void textBox7_TextChanged(object sender, EventArgs e)
         {
             // New text..
-            btnStatusMessage.Text = textBox7.Text;
+            textStatusLabel.Text = textBox7.Text;
         }
 
         private void textBox7_KeyPress(object sender, KeyPressEventArgs e)
